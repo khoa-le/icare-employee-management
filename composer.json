@@ -1,7 +1,6 @@
 {
     "name": "icb/empployee-management",
     "type": "project",
-
     "require": {
         "symfony/symfony": "^2.8",
         "sensio/framework-extra-bundle": "^3.0",
