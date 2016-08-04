@@ -1,11 +1,12 @@
 {
-    "name": "icb/empployee-management",
+    "name": "icb/employee-management",
     "type": "project",
     "require": {
         "symfony/symfony": "^2.8",
         "sensio/framework-extra-bundle": "^3.0",
         "vlucas/phpdotenv": "^2.3",
-        "symfony/monolog-bundle": "^2.11"
+        "symfony/monolog-bundle": "^2.11",
+        "symfony/swiftmailer-bundle": "~2.3"
     },
     "authors": [
         {
