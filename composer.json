@@ -1,0 +1,22 @@
+{
+    "name": "icare/empployee-management",
+    "type": "project",
+
+    "require": {
+        "symfony/symfony": "^2.8",
+        "sensio/framework-extra-bundle": "^3.0",
+        "vlucas/phpdotenv": "^2.3",
+        "symfony/monolog-bundle": "^2.11"
+    },
+    "authors": [
+        {
+            "name": "Khoa",
+            "email": "khoaln6@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
