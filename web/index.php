@@ -8,7 +8,6 @@ use Symfony\Component\Debug\Debug;
 // for more information
 umask(0000);
 
-
 /**
  * @var Composer\Autoload\ClassLoader $loader
  */

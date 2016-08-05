@@ -1,7 +1,49 @@
+imports:
+    - { resource: api.yml }
+    - { resource: services.yml }
+
 framework:
     secret: %secret%
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    form: ~
     router:
         resource: %kernel.root_dir%/config/routing.yml
+    templating:
+        engines: ['twig']
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_mysql
+                host:     "%DATABASE_HOST%"
+                port:     "%DATABASE_PORT%"
+                dbname:   "%DATABASE_NAME%"
+                user:     "%DATABASE_USER%"
+                password: "%DATABASE_PASSWORD%"
+                charset:  UTF8
+                schema_filter: "/^(user|book)$/"
+
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        default_entity_manager: default
+        entity_managers:
+            default:
+                connection: default
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: false
+                mappings:
+                    AppBundle: ~
+
+
 monolog:
     handlers:
         main:
@@ -12,3 +54,4 @@ monolog:
             type:  stream
             path:  "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
+

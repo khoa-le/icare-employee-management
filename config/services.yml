@@ -1,0 +1,7 @@
+services:
+    b2b.database_tenant_switcher:
+        class:      AppBundle\EventListener\MultiTenantEventListener
+        arguments:  [@request, @doctrine.dbal.default_connection, @logger]
+        scope:      request
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
